@@ -1,0 +1,37 @@
+
+课程来源：imooc      
+网址：http://www.imooc.com/video/3725
+万事万物皆对象，
+类也是对象，是Class类的对象
+这个对象我们称为该类的类类型。
+任何一个类都是Class的实例对象，这个实例对象有三种表示方式
+第一种表示方式-->实际在告诉我们任何一个类都是隐含的静态成员变量class
+Class c1 = User.class;
+第二种表达方式  已经知道该类的对象通过getClass方法
+User u = new User();
+Class c2 = u.getClass();
+//不管c1还是c2都代表了User类的类类型一个类只可能Class类的一个实例对象
+System.out.println(c1==c2);
+//以后我们知道类名的话可以直接用User.class;我们知道对象的话可以直接u.getClass();
+//第三种表达方式
+Class c3 = null;
+try{
+	c3 = Class.forName("com.jenius.web.meta.User");//全称(包名+类名)
+}catch(ClassNotFoundException e){
+	e.printStackTrace();
+}//我们完全可以通过类的类类型创建该类的对象实例-->通过c1 or c2 or c3 创建User的实例
+
+try{
+	User u = (User)c1.newInstance();//前提要求：需要有无参数的构造方法
+	u.print();
+}catch(InstantiationExcepion e){
+	e.printStackTrace();
+}catch(IllegalAccessException e){
+	e.printStackTrace();
+}
+class User{
+	void print()
+	{
+		System.out.println("User Class!");
+	}
+}
