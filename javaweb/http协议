@@ -1,0 +1,24 @@
+用于浏览器端和Web服务器通信的协议-->HTTP协议。
+HTTP协议是请求响应式协议，一次HTTP请求，一次HTTP响应构成一次HTTP事务。
+HTTP是无状态的，任何两次HTTP事务之间不会有依赖关系的（两次请求互相不干扰）。
+TCP/IP协议栈 应用层（hTTP）应用层（TCP 端口号默认80） 网络层（IP）数据联络层和物理层
+DNS：域名解析服务器。
+HTTP请求：
+GET / HTTP/1.1  //请求行  
+
+//请求头
+Host: localhost   
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: zh-cn
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/601.6.17 (KHTML, like Gecko) Version/9.1.1 Safari/601.6.17
+
+GET / HTTP/1.1  /r/n
+
+GET : 请求方法  
+/ ：资源路径
+HTTP/1.1 :协议版本号
+/r/n：结尾
+
+请求头的格式：key:value \r\n
